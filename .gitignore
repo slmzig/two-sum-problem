@@ -1,0 +1,24 @@
+*.class
+*.log
+target/
+logs/
+swagger/ids.yaml
+src/main/resources/server.yaml
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.bsp
+.env
+
+# Scala-IDE specific
+.idea/
+rest.iml
+.DS_Store
