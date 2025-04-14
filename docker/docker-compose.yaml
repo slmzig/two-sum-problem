@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  two-sum-app:
+    image: two-sum-problem:latest
+    container_name: two-sum-problem
+    build:
+      context: .
+    ports:
+      - "${HTTP_PORT:-3000}:3000"
+    environment:
+      RATE_LIMIT_AMOUNT: 100
+      RATE_LIMIT_PER: 30s
+      DEFAULT_TARGET: 20
+    restart: unless-stopped

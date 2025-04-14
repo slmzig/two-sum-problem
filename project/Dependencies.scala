@@ -16,16 +16,19 @@ object Dependencies {
     val mockitoScalaTest    = "1.17.14"
     val catsEffectScalaTest = "1.5.0"
 
+    val caffeine = "3.1.8"
+
   }
 
   object Libraries {
-    def circe(artifact: String): ModuleID  = "io.circe"     %% s"circe-$artifact"  % V.circe
-    def http4s(artifact: String): ModuleID = "org.http4s"   %% s"http4s-$artifact" % V.http4s
+    def circe(artifact: String): ModuleID  = "io.circe"   %% s"circe-$artifact"  % V.circe
+    def http4s(artifact: String): ModuleID = "org.http4s" %% s"http4s-$artifact" % V.http4s
 
-    val cats             = "org.typelevel" %% "cats-core"          % V.cats
-    val catsEffectKernel = "org.typelevel" %% "cats-effect-kernel" % V.catsEffect
-    val catsEffectStd    = "org.typelevel" %% "cats-effect-std"    % V.catsEffect
-    val catsEffect       = "org.typelevel" %% "cats-effect"        % V.catsEffect
+    val caffeine         = "com.github.ben-manes.caffeine" % "caffeine"            % V.caffeine
+    val cats             = "org.typelevel"                 %% "cats-core"          % V.cats
+    val catsEffectKernel = "org.typelevel"                 %% "cats-effect-kernel" % V.catsEffect
+    val catsEffectStd    = "org.typelevel"                 %% "cats-effect-std"    % V.catsEffect
+    val catsEffect       = "org.typelevel"                 %% "cats-effect"        % V.catsEffect
 
     val circeCore          = circe("core")
     val circeGeneric       = circe("generic")
@@ -45,10 +48,10 @@ object Dependencies {
     val scalalogging = "com.typesafe.scala-logging" %% "scala-logging"  % V.scalalogging
     val logback      = "ch.qos.logback"             % "logback-classic" % V.logback
 
-    val scalaTest          = "org.scalatest"          %% "scalatest"                              % V.scalaTest           % Test
-    val mockitoScalaTest   = "org.mockito"            %% "mockito-scala-scalatest"                % V.mockitoScalaTest    % Test
-    val mockitoScalaCats   = "org.mockito"            %% "mockito-scala-cats"                     % V.mockitoScalaTest    % Test
-    val castsEffectTest    = "org.typelevel"          %% "cats-effect-testing-scalatest"          % V.catsEffectScalaTest % Test
+    val scalaTest        = "org.scalatest" %% "scalatest"                     % V.scalaTest           % Test
+    val mockitoScalaTest = "org.mockito"   %% "mockito-scala-scalatest"       % V.mockitoScalaTest    % Test
+    val mockitoScalaCats = "org.mockito"   %% "mockito-scala-cats"            % V.mockitoScalaTest    % Test
+    val castsEffectTest  = "org.typelevel" %% "cats-effect-testing-scalatest" % V.catsEffectScalaTest % Test
 
   }
 }

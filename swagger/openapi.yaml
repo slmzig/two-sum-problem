@@ -1,0 +1,64 @@
+openapi: 3.0.3
+info:
+  title: Find Sum Pair API
+  version: 1.0.0
+  description: API for finding index pairs of integers whose sum equals a given target value.
+
+paths:
+  /find:
+    post:
+      summary: Find index pairs in a list of integers that sum to a given target.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FindRequest'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindResponse'
+        '400':
+          description: Invalid input data
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    FindRequest:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: integer
+        target:
+          type: integer
+          nullable: true
+      required:
+        - data
+
+    FindResponse:
+      type: object
+      properties:
+        target:
+          type: integer
+        pairs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Pair'
+
+    Pair:
+      type: object
+      properties:
+        indices:
+          type: array
+          items:
+            type: integer
+        numbers:
+          type: array
+          items:
+            type: integer
