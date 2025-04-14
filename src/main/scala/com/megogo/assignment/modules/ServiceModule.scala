@@ -2,14 +2,14 @@ package com.megogo.assignment.modules
 
 import cats.effect.IO
 import com.megogo.assignment.config.AppConfig
-import com.megogo.assignment.services.{FindPairsService, PairService, TargetResolverService}
-import com.megogo.assignment.util.{CacheFactory, LogFactory}
+import com.megogo.assignment.services.{ FindPairsService, PairService, TargetResolverService }
+import com.megogo.assignment.util.{ CacheFactory, LogFactory }
 import org.http4s.client.Client
 
 final case class ServiceModule(
-                                sumService: PairService,
-                                targetResolver: TargetResolverService,
-                                findFacade: FindPairsService
+  sumService: PairService,
+  targetResolver: TargetResolverService,
+  findPairs: FindPairsService
 )
 
 object ServiceModule {

@@ -16,7 +16,7 @@ object Routes {
       case req @ POST -> Root / "find" =>
         for {
           request <- req.as[FindRequest]
-          result  <- serviceModule.findFacade.process(request).toResponse(Ok(_))
+          result  <- serviceModule.findPairs.process(request).toResponse(Ok(_))
         } yield result
     }
 
