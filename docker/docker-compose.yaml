@@ -4,8 +4,6 @@ services:
   two-sum-app:
     image: two-sum-problem:latest
     container_name: two-sum-problem
-    build:
-      context: .
     ports:
       - "${HTTP_PORT:-3000}:3000"
     environment:

@@ -25,6 +25,12 @@ If you prefer not to use `docker-compose`:
 sbt docker:publishLocal
 ```
 
+## Build and run script
+
+```bash
+./docker/build-and-run.sh
+```
+
 ---
 
 ## Configuration via Environment Variables

@@ -1,8 +1,12 @@
 #!/bin/bash
 
-sbt clean
+set -e
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+sbt clean
 sbt docker:publishLocal
 
-sh ./docker-down.sh
-sh ./docker-up.sh
+sh "$SCRIPT_DIR/docker-down.sh"
+sh "$SCRIPT_DIR/docker-up.sh"
