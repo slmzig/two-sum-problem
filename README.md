@@ -6,29 +6,18 @@ A minimal Scala backend that exposes an endpoint to solve the Two Sum Problem wi
 
 ## Run the Service via Docker
 
-```bash
-./up.sh  # Builds the image and starts docker-compose
-```
-
-### Stop the service:
-```bash
-./down.sh
-```
-
----
-
-## Build Docker Image Manually
-
-If you prefer not to use `docker-compose`:
-
-```bash
-sbt docker:publishLocal
-```
-
-## Build and run script
-
+### Build and run app in docker
 ```bash
 ./docker/build-and-run.sh
+```
+### Start the service manualy:
+```bash
+./up.sh
+```
+
+### Stop the service manualy:
+```bash
+./down.sh
 ```
 
 ---
