@@ -12,12 +12,12 @@ A minimal Scala backend that exposes an endpoint to solve the Two Sum Problem wi
 ```
 ### Start the service manualy:
 ```bash
-./up.sh
+./docker/docker-up.sh
 ```
 
 ### Stop the service manualy:
 ```bash
-./down.sh
+./docker/docker-down.sh
 ```
 
 ---
