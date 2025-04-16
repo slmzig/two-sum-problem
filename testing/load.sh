@@ -3,7 +3,7 @@
 URL="http://localhost:3000/find"
 HEADERS="-H Content-Type:application/json"
 
-TARGETS=(19990 19991 19992 19993 19994 19995 19996 19997 19998 19999)
+TARGETS=(19990)
 
 TARGET=${TARGETS[$RANDOM % ${#TARGETS[@]}]}
 

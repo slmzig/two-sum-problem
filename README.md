@@ -93,6 +93,23 @@ hey -n 20 -c 10 -m POST -H "Content-Type: application/json" \
   -d '{"data": [1,2,3], "target": 5}' http://localhost:3000/find
 ```
 
+**Load testing:**
+```bash
+URL="http://localhost:3000/find"
+HEADERS="-H Content-Type:application/json"
+
+TARGETS=(19990)
+
+TARGET=${TARGETS[$RANDOM % ${#TARGETS[@]}]}
+
+BODY=$(jq -n --argjson arr "$(seq 1 10000 | jq -R . | jq -s .)" --argjson target "$TARGET" '{data: $arr, target: $target}')
+
+hey -n 100 -c 100 \
+  -m POST \
+  $HEADERS \
+  -d "$BODY" \
+  $URL
+```
 ---
 ## Swagger docs
 
